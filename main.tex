@@ -9,6 +9,24 @@
 \usepackage{tikz-cd}
 \usepackage[makeroom]{cancel}
 
+\usepackage{chngcntr}
+\counterwithin{figure}{section}
+\numberwithin{equation}{section}
+
+\theoremstyle{definition}
+\newtheorem*{remark}{Remark}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{definition}
+\newtheorem{corollary}{Corollary}[theorem]
+
+\theoremstyle{definition}
+\newtheorem{lemma}[theorem]{Lemma}
 
 \newmdenv[leftline=false,topline=false]{topright}
 \let\proof\relax
