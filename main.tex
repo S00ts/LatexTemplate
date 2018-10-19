@@ -13,6 +13,16 @@
 \counterwithin{figure}{section}
 \numberwithin{equation}{section}
 
+\newtheoremstyle{break}% name
+{}%         Space above, empty = `usual value'
+{}%         Space below
+{}% Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{}%        Punctuation after thm head
+{\newline}% Space after thm head: \newline = linebreak
+{#1 #2 \normalfont #3}%         Thm head spec
+
 \theoremstyle{definition}
 \newtheorem*{remark}{Remark}
 
@@ -20,13 +30,16 @@
 \newtheorem*{definition}{Definition}
 
 \theoremstyle{definition}
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{theorem}{Theorem}
 
 \theoremstyle{definition}
-\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem*{corollary}{Corollary}
+
+\theoremstyle{break}
+\newtheorem*{example}{Example}
 
 \theoremstyle{definition}
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{lemma}{Lemma}
 
 \theoremstyle{definition}
 \newtheorem*{objective}{Objective}
@@ -61,8 +74,9 @@
 	linkcolor=blue
 }
 
-\usepackage{tocloft}
+\usepackage{tocloft} %table of contents package
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\newcommand{\atoc}[1]{\addtocontents{toc}{#1\par}}
 
 \setlength{\parindent}{0pt}
 
